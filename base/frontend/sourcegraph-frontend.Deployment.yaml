@@ -58,6 +58,8 @@ spec:
           # new value after transition
         - name: PRECISE_CODE_INTEL_API_SERVER_URL
           value: k8s+http://precise-code-intel-api-server:3186
+        - name: PRECISE_CODE_INTEL_BUNDLE_MANAGER_URL
+          value: http://precise-code-intel-bundle-manager:3187
         - name: PROMETHEUS_URL
           value: http://prometheus:30090
         image: index.docker.io/sourcegraph/frontend:3.16.1@sha256:8c144508a7f2a662d95c1831ba4b6542942aa25c0eb2f87abe80ff0a9151cf20
