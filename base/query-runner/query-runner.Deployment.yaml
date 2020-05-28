@@ -25,7 +25,7 @@ spec:
     spec:
       containers:
       - env:
-        image: index.docker.io/sourcegraph/query-runner:3.14.4
+        image: index.docker.io/sourcegraph/query-runner:3.16.1@sha256:c69a7a543467ce9f2c8346795542fe9d2818c8fa68c3b1974a54276bc133ae16
         terminationMessagePolicy: FallbackToLogsOnError
         name: query-runner
         ports:
