@@ -1,0 +1,45 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+bases:
+  - ../bases/deployments
+
+namespace: sourcegraph
+
+patchesStrategicMerge: 
+  - frontend_node_selector_patch.yaml
+  - github_proxy_node_selector_patch.yaml
+  - gitserver_node_selector_patch.yaml
+  - grafana_node_selector_patch.yaml
+  - indexed_search_node_selector_patch.yaml
+  - jaeger_node_selector_patch.yaml
+  - pgsql_node_selector_patch.yaml
+  - precise_code_intel_bundle_manager_node_selector_patch.yaml
+  - precise_code_intel_worker_node_selector_patch.yaml
+  - prometheus_node_selector_patch.yaml
+  - query_runner_node_selector_patch.yaml
+  - redis_cache_node_selector_patch.yaml
+  - redis_store_node_selector_patch.yaml
+  - replacer_node_selector_patch.yaml
+  - repo_updater_node_selector_patch.yaml
+  - searcher_node_selector_patch.yaml
+  - symbols_node_selector_patch.yaml
+  - syntect_server_node_selector_patch.yaml
+  - frontend_resources_patch.yaml
+  - github_proxy_resources_patch.yaml
+  - gitserver_resources_patch.yaml
+  - grafana_resources_patch.yaml
+  - indexed_search_resources_patch.yaml
+  - jaeger_resources_patch.yaml
+  - pgsql_resources_patch.yaml
+  - precise_code_intel_bundle_manager_resources_patch.yaml
+  - precise_code_intel_worker_resources_patch.yaml
+  - prometheus_resources_patch.yaml
+  - query_runner_resources_patch.yaml
+  - redis_cache_resources_patch.yaml
+  - redis_store_resources_patch.yaml
+  - replacer_resources_patch.yaml
+  - repo_updater_resources_patch.yaml
+  - searcher_resources_patch.yaml
+  - symbols_resources_patch.yaml
+  - syntect_server_resources_patch.yaml 

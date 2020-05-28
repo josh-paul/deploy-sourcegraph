@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: replacer
+spec:
+  template:
+    spec:
+      containers:
+      - name: replacer
+        resources:
+          limits:
+            cpu: "4"
+            memory: 500M
+          requests:
+            cpu: 500m
+            memory: 500M
+      - name: jaeger-agent
+        resources:
+          limits:
+            cpu: "1"
+            memory: 500M
+          requests:
+            cpu: 100m
+            memory: 100M
