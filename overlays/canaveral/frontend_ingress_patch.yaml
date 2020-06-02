@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    nginx.ingress.kubernetes.io/affinity: cookie
+    nginx.ingress.kubernetes.io/affinity-mode: persistent
+  name: sourcegraph-frontend
+spec:
+  rules:
+  - host: sourcegraph.canaveral-corp.us-west-2.aws
+    http:
+      paths:
+      - backend:
+          serviceName: sourcegraph-frontend
+          servicePort: http
+        path: /
+        pathType: ImplementationSpecific
+  tls:
+  - hosts:
+    - sourcegraph.canaveral-corp.us-west-2.aws
+    secretName: sourcegraph-tls

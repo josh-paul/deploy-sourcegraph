@@ -6,7 +6,7 @@ spec:
   template:
     spec:
       containers:
-      - name: syntect
+      - name: syntect-server
         resources:
           limits:
             cpu: "4"

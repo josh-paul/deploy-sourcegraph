@@ -13,7 +13,7 @@ patchesStrategicMerge:
   - grafana_node_selector_patch.yaml
   - indexed_search_node_selector_patch.yaml
   - jaeger_node_selector_patch.yaml
-  - pgsql_node_selector_patch.yaml
+  #- pgsql_node_selector_patch.yaml
   - precise_code_intel_bundle_manager_node_selector_patch.yaml
   - precise_code_intel_worker_node_selector_patch.yaml
   - prometheus_node_selector_patch.yaml
@@ -31,7 +31,7 @@ patchesStrategicMerge:
   - grafana_resources_patch.yaml
   - indexed_search_resources_patch.yaml
   - jaeger_resources_patch.yaml
-  - pgsql_resources_patch.yaml
+  #- pgsql_resources_patch.yaml
   - precise_code_intel_bundle_manager_resources_patch.yaml
   - precise_code_intel_worker_resources_patch.yaml
   - prometheus_resources_patch.yaml
@@ -42,4 +42,13 @@ patchesStrategicMerge:
   - repo_updater_resources_patch.yaml
   - searcher_resources_patch.yaml
   - symbols_resources_patch.yaml
-  - syntect_server_resources_patch.yaml 
+  - syntect_server_resources_patch.yaml
+  - frontend_postgres_patch.yaml
+  - frontend_ingress_patch.yaml
+  - grafana_storageclass_patch.yaml
+  - gitserver_storageclass_patch.yaml
+  - indexed_search_storageclass_patch.yaml
+  - precise_code_intel_bundle_manager_storageclass_patch.yaml
+  - prometheus_storageclass_patch.yaml
+  - redis_cache_storageclass_patch.yaml
+  - redis_store_storageclass_patch.yaml

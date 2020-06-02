@@ -28,10 +28,10 @@ resources:
   - base/syntect-server/syntect-server.Deployment.yaml
   - base/symbols/symbols.Service.yaml
   - base/symbols/symbols.Deployment.yaml
-  - base/pgsql/pgsql.PersistentVolumeClaim.yaml
-  - base/pgsql/pgsql.ConfigMap.yaml
-  - base/pgsql/pgsql.Service.yaml
-  - base/pgsql/pgsql.Deployment.yaml
+  #- base/pgsql/pgsql.PersistentVolumeClaim.yaml
+  #- base/pgsql/pgsql.ConfigMap.yaml
+  #- base/pgsql/pgsql.Service.yaml
+  #- base/pgsql/pgsql.Deployment.yaml
   - base/prometheus/prometheus.ServiceAccount.yaml
   - base/prometheus/prometheus.ConfigMap.yaml
   - base/prometheus/prometheus.Deployment.yaml

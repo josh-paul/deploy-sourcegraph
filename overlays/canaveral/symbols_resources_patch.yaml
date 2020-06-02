@@ -3,17 +3,18 @@ kind: Deployment
 metadata:
   name: symbols
 spec:
+  replicas: 3
   template:
     spec:
       containers:
       - name: symbols
         resources:
           limits:
-            cpu: "2"
-            memory: 2G
+            cpu: "4"
+            memory: 4G
           requests:
-            cpu: 500m
-            memory: 500M
+            cpu: "1"
+            memory: 1G
       - name: jaeger-agent
         resources:
           limits:

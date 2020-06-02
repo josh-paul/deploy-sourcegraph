@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: indexed-search
+spec:
+  volumeClaimTemplates:
+  - metadata:
+      name: data
+    spec:
+      accessModes:
+      - ReadWriteOnce
+      resources:
+        requests:
+          # The size of disk to used for search indexes.
+          # This should typically be gitserver disk size multipled by the number of gitserver shards.
+          storage: 200Gi
+      storageClassName: sourcegraph-storage-class
+  

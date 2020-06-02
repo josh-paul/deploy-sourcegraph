@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   name: searcher
 spec:
+  replicas: 3
   template:
     spec:
       containers:
@@ -10,10 +11,10 @@ spec:
         resources:
           limits:
             cpu: "2"
-            memory: 2G
+            memory: 4G
           requests:
-            cpu: 500m
-            memory: 500M
+            cpu: "0.5"
+            memory: 1G
       - name: jaeger-agent
         resources:
           limits:

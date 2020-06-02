@@ -3,17 +3,18 @@ kind: StatefulSet
 metadata:
   name: gitserver
 spec:
+  replicas: 3
   template:
     spec:
       containers:
       - name: gitserver
         resources:
           limits:
-            cpu: "4"
-            memory: 8G
+            cpu: "8"
+            memory: 4G
           requests:
-            cpu: "4" 
-            memory: 8G
+            cpu: "8" 
+            memory: 4G
       - name: jaeger-agent
         resources:
           limits:
