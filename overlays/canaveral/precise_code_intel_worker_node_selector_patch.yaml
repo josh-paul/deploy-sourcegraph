@@ -1,0 +1,9 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: precise-code-intel-worker
+spec:
+  template:
+    spec:
+      nodeSelector:
+        fleet: sourcegraph
