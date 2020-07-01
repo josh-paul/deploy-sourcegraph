@@ -52,3 +52,4 @@ patchesStrategicMerge:
   - prometheus_storageclass_patch.yaml
   - redis_cache_storageclass_patch.yaml
   - redis_store_storageclass_patch.yaml
+  - frontend_gitserver_patch.yaml
