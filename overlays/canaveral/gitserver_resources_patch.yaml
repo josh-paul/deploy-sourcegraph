@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: gitserver
+spec:
+  replicas: 3
+  template:
+    spec:
+      containers:
+      - name: gitserver
+        resources:
+          limits:
+            cpu: "8"
+            memory: 4G
+          requests:
+            cpu: "8" 
+            memory: 4G
+      - name: jaeger-agent
+        resources:
+          limits:
+            cpu: "1"
+            memory: 500M
+          requests:
+            cpu: 100m
+            memory: 100M

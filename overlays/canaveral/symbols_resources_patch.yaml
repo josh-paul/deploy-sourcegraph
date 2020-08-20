@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: symbols
+spec:
+  replicas: 3
+  template:
+    spec:
+      containers:
+      - name: symbols
+        resources:
+          limits:
+            cpu: "4"
+            memory: 4G
+          requests:
+            cpu: "1"
+            memory: 1G
+      - name: jaeger-agent
+        resources:
+          limits:
+            cpu: "1"
+            memory: 500M
+          requests:
+            cpu: 100m
+            memory: 100M
