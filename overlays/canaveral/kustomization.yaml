@@ -20,7 +20,6 @@ patchesStrategicMerge:
   - query_runner_node_selector_patch.yaml
   - redis_cache_node_selector_patch.yaml
   - redis_store_node_selector_patch.yaml
-  - replacer_node_selector_patch.yaml
   - repo_updater_node_selector_patch.yaml
   - searcher_node_selector_patch.yaml
   - symbols_node_selector_patch.yaml
@@ -38,7 +37,6 @@ patchesStrategicMerge:
   - query_runner_resources_patch.yaml
   - redis_cache_resources_patch.yaml
   - redis_store_resources_patch.yaml
-  - replacer_resources_patch.yaml
   - repo_updater_resources_patch.yaml
   - searcher_resources_patch.yaml
   - symbols_resources_patch.yaml
