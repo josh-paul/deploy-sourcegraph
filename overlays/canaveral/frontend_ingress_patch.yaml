@@ -15,7 +15,16 @@ spec:
           servicePort: http
         path: /
         pathType: ImplementationSpecific
+  - host: sourcegraph.ntnxdpro.com
+    http:
+      paths:
+      - backend:
+          serviceName: sourcegraph-frontend
+          servicePort: http
+        path: /
+        pathType: ImplementationSpecific
   tls:
   - hosts:
     - sourcegraph.canaveral-corp.us-west-2.aws
+    - sourcegraph.ntnxdpro.com
     secretName: sourcegraph-tls

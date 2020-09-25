@@ -3,6 +3,7 @@ kind: Kustomization
 
 bases:
   - ../bases/deployments
+  - ../bases/pvcs
 
 namespace: sourcegraph
 
