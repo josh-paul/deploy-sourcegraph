@@ -6,6 +6,7 @@ metadata:
   labels:
     deploy: sourcegraph
     sourcegraph-resource-requires: no-cluster-admin
+    app.kubernetes.io/component: symbols
   name: symbols
 spec:
   minReadySeconds: 10
@@ -35,7 +36,7 @@ spec:
               fieldPath: metadata.name
         - name: CACHE_DIR
           value: /mnt/cache/$(POD_NAME)
-        image: index.docker.io/sourcegraph/symbols:3.19.1@sha256:88164f90893e0663a415ab7c68ad1a0a2ad0786042d3652e55ac86a9686b87fe
+        image: index.docker.io/sourcegraph/symbols:insiders@sha256:2cff484d8a608efb39435ff8234fae55e374600e656c4e66d5462c3ae7db8e44
         terminationMessagePolicy: FallbackToLogsOnError
         name: symbols
         livenessProbe:
@@ -67,7 +68,7 @@ spec:
         volumeMounts:
         - mountPath: /mnt/cache
           name: cache-ssd
-      - image: index.docker.io/sourcegraph/jaeger-agent:3.19.1@sha256:cb75526fb4baa89fca5ed4566abf2104478f7e2e498139e72ed4d52a00ea1ff0
+      - image: index.docker.io/sourcegraph/jaeger-agent:insiders@sha256:fefe6a380cff06cb04cd4ec83b5f722a2d84e7d1c56a39d4d358ae3002a01695
         name: jaeger-agent
         env:
           - name: POD_NAME

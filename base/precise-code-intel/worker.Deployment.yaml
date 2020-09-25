@@ -6,6 +6,7 @@ metadata:
   labels:
     deploy: sourcegraph
     sourcegraph-resource-requires: no-cluster-admin
+    app.kubernetes.io/component: precise-code-intel
   name: precise-code-intel-worker
 spec:
   minReadySeconds: 10
@@ -35,7 +36,7 @@ spec:
           valueFrom:
             fieldRef:
               fieldPath: metadata.name
-        image: index.docker.io/sourcegraph/precise-code-intel-worker:3.19.1@sha256:f8f8c6d5f203ec00578f17d7ce229509e6641ae80a8549128a8928d255188f56
+        image: index.docker.io/sourcegraph/precise-code-intel-worker:insiders@sha256:b219ea5b914126de2f569623bbc12a5c36f5e59deb47b1865351c81bc9eac71c
         terminationMessagePolicy: FallbackToLogsOnError
         name: precise-code-intel-worker
         livenessProbe:

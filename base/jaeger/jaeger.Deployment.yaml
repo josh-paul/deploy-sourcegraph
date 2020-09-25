@@ -5,9 +5,9 @@ metadata:
   labels:
     deploy: sourcegraph
     sourcegraph-resource-requires: no-cluster-admin
+    app.kubernetes.io/component: jaeger
     app: jaeger
     app.kubernetes.io/name: jaeger
-    app.kubernetes.io/component: all-in-one
 spec:
   replicas: 1
   selector:
@@ -29,7 +29,7 @@ spec:
         prometheus.io/port: "16686"
     spec:
         containers:
-          - image: index.docker.io/sourcegraph/jaeger-all-in-one:3.19.1@sha256:1dd2095c20ed8d86024469113895831c725089ef595a031f3d6d6664594c6d64
+          - image: index.docker.io/sourcegraph/jaeger-all-in-one:insiders@sha256:6f7332ca19725d5fff32c57f3a2ca3f7c1e8275350254788c4e95e16e3a73216
             name: jaeger
             args: ["--memory.max-traces=20000"]
             ports:
@@ -52,7 +52,7 @@ spec:
               initialDelaySeconds: 5
             resources:
               limits:
-                cpu: 1
+                cpu: "1"
                 memory: 1G
               requests:
                 cpu: 500m
