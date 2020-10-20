@@ -40,6 +40,16 @@ spec:
           value: disable
         - name: PGUSER
           value: sg
+        - name: CODEINTEL_PGDATABASE
+          value: sg
+        - name: CODEINTEL_PGHOST
+          value: codeintel-db
+        - name: CODEINTEL_PGPORT
+          value: "5432"
+        - name: CODEINTEL_PGSSLMODE
+          value: disable
+        - name: CODEINTEL_PGUSER
+          value: sg
         - name: SRC_GIT_SERVERS
           value: gitserver-0.gitserver:3178
         # POD_NAME is used by CACHE_DIR
@@ -59,7 +69,7 @@ spec:
           value: http://precise-code-intel-bundle-manager:3187
         - name: PROMETHEUS_URL
           value: http://prometheus:30090
-        image: index.docker.io/sourcegraph/frontend:insiders@sha256:5c2381441ab28f5457502b4d9b36fd1bb1a08eb1d5e0642ed9f19edf17bb6916
+        image: index.docker.io/sourcegraph/frontend:insiders@sha256:74f959548912c037a8e92b083c8468ffce75c2822b4fef53edcdc3f7e728d9fc
         terminationMessagePolicy: FallbackToLogsOnError
         livenessProbe:
           httpGet:
@@ -91,7 +101,7 @@ spec:
         volumeMounts:
         - mountPath: /mnt/cache
           name: cache-ssd
-      - image: index.docker.io/sourcegraph/jaeger-agent:insiders@sha256:fefe6a380cff06cb04cd4ec83b5f722a2d84e7d1c56a39d4d358ae3002a01695
+      - image: index.docker.io/sourcegraph/jaeger-agent:insiders@sha256:013713e5917c267d4d224f727702013e970d0550f340598ea8567b2d537fbcae
         name: jaeger-agent
         env:
           - name: POD_NAME
