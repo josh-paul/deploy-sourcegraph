@@ -23,4 +23,18 @@ spec:
             secretKeyRef:
               name: sourcegraph-postgres
               key: password
-          
+        - name: CODEINTEL_PGDATABASE
+          value: codeintel
+        - name: CODEINTEL_PGHOST
+          value: sourcegraph-postgres-stolon-proxy.sourcegraph-postgres.svc.cluster.local
+        - name: CODEINTEL_PGPORT
+          value: "5432"
+        - name: CODEINTEL_PGSSLMODE
+          value: disable
+        - name: CODEINTEL_PGUSER
+          value: stolon
+        - name: CODEINTEL_PGPASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: sourcegraph-postgres
+              key: password
