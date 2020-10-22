@@ -31,7 +31,7 @@ spec:
           valueFrom:
             fieldRef:
               fieldPath: metadata.name
-        image: index.docker.io/sourcegraph/precise-code-intel-bundle-manager:insiders@sha256:3ce4d70bae6524329f4941664a587306a7a7e77405b666c14685d34bd38e3506
+        image: index.docker.io/sourcegraph/precise-code-intel-bundle-manager:insiders@sha256:ba8aaf9a9184448d8eb84c1cbed72a56d039c79a7ff0b643711e15ec0bc2dda5
         terminationMessagePolicy: FallbackToLogsOnError
         name: precise-code-intel-bundle-manager
         livenessProbe:
